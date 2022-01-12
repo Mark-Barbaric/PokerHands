@@ -1,0 +1,4 @@
+cmake_minimum_required (VERSION 3.16)
+project(PokerHand)
+
+add_executable(PokerTest PokerHand.cpp PokerHand.h PokerHand_UnitTest.cpp)
