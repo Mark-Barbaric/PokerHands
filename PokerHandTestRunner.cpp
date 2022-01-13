@@ -6,12 +6,12 @@
 
 int main() {
 
-    std::cout << "Starting test run.\n";
+    std::cout << "Starting test run.\n\n";
 	grabyo::stringHelperTests::runStringHelperTests();
     grabyo::pokerHandRankTests::runPokerHandRankTests();
     grabyo::pokerHandScoreTests::runPokerHandScoreTests();
     grabyo::pokerHandComparisonTests::runPokerHandComparisonTests();
-	std::cout << "All tests passed\n";
+	std::cout << "All tests passed.\n\n";
 
 	return EXIT_SUCCESS;
 }

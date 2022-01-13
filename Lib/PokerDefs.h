@@ -29,13 +29,6 @@ namespace grabyo::pokerDefs{
         }
     }
 
-    struct Card{
-        int  value;
-        char face;
-        void setValue(char c){value= faceToValue(c);}
-        static bool cmp(const Card &left, const Card &right) {return (left.value<right.value);}
-    };
-
     enum class HandRank : char {
         Unclassified = 0,
         HighCard = 1,

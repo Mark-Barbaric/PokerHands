@@ -30,7 +30,7 @@ namespace grabyo {
 		void analyzeCardCount();
 		std::string m_hand;
         pokerDefs::HandRank m_handRank {pokerDefs::HandRank::Unclassified};
-		pokerDefs::Card m_cards[5];
+		int m_cards[5]{};
 		int m_handScore {0};
 		bool m_containsStraight {false};
 		bool m_containsFlush {false};

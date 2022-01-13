@@ -5,9 +5,8 @@ grabyo::PokerHand::PokerHand(std::string_view hand) :m_hand(hand)
     analyzeCards();
 }
 
-grabyo::PokerHand::Comparison grabyo::PokerHand::compareWith(const PokerHand& opponent) {
-
-	// Your code here ...
+grabyo::PokerHand::Comparison grabyo::PokerHand::compareWith(const PokerHand& opponent)
+{
 	if(m_handRank > opponent.m_handRank){
 	    return Comparison::Win;
 	} else if(m_handRank < opponent.m_handRank){
@@ -26,15 +25,14 @@ grabyo::PokerHand::Comparison grabyo::PokerHand::compareWith(const PokerHand& op
 void grabyo::PokerHand::analyzeCards()
 {
     const auto pokerHands = stringHelpers::splitString(m_hand, ' ');
-    //optimise with bitwise operation
     auto max = INT_MIN, min = INT_MAX;
 
     for(int i = 0; i < pokerHands.size(); ++i){
         const auto curCard = pokerHands[i][0];
         const auto curSuit = pokerHands[i][1];
-        m_cards[i].setValue(curCard);
-        max = std::max(m_cards[i].value, max);
-        min = std::min(m_cards[i].value, min);
+        m_cards[i] = pokerDefs::faceToValue(curCard);
+        max = std::max(m_cards[i], max);
+        min = std::min(m_cards[i], min);
         m_suitCount[curSuit]++;
         m_cardCount[curCard]++;
     }
@@ -83,8 +81,7 @@ void grabyo::PokerHand::analyzeCardCount()
             } else if(c.second == 4){
                 m_numQuads++;
             }
-            m_handScore += (pokerDefs::faceToValue(c.first) * c.second) *
-                           std::floor(std::pow(10, c.second));
+            m_handScore += (pokerDefs::faceToValue(c.first) * c.second) * std::floor(std::pow(10, c.second));
         }else {
             m_handScore += pokerDefs::faceToValue(c.first);
         }
