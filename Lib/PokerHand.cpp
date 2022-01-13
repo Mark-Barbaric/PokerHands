@@ -46,7 +46,7 @@ void grabyo::PokerHand::setHandRank()
     m_containsStraight = (max - min + 1) == 5 && cardCount.size() == 5;
 
     if(m_containsFlush || m_containsStraight){
-        m_handScore = m_highestCardValue * 10000;
+        m_handScore = m_highestCardValue * 100000;
         if(m_containsStraight && m_containsFlush){
             m_handRank = m_highestCardValue == 14 ? pokerDefs::HandRank::RoyalFlush : pokerDefs::HandRank::StraightFlush;
         } else if(m_containsStraight && !m_containsFlush){
@@ -67,7 +67,7 @@ void grabyo::PokerHand::setHandRank()
                     quadCount++;
                 }
                 m_handScore += (pokerDefs::faceToValue(c.first) * c.second) *
-                        std::floor(std::pow(10, c.second - 1));
+                        std::floor(std::pow(10, c.second));
             }else {
                 m_handScore += pokerDefs::faceToValue(c.first);
             }
