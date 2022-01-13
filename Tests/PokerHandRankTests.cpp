@@ -11,7 +11,7 @@ namespace grabyo::pokerHandRankTests{
         assert(highCard.getHandRank() == pokerDefs::HandRank::HighCard);
         std::cout << "High Card Rank Test Succeeded.\n";
 
-        PokerHand pair {"AH AS 3D 7S QH"};
+        PokerHand pair {"2H 2S 3D 5S 6H"};
         assert(pair.getHandRank() == pokerDefs::HandRank::OnePair);
         std::cout << "Pair Card Rank Test Succeeded.\n";
 
@@ -39,7 +39,7 @@ namespace grabyo::pokerHandRankTests{
         assert(flush.getHandRank() == pokerDefs::HandRank::Flush);
         std::cout << "Flush Card Type Rank Succeeded.\n";
 
-        PokerHand straightFlush {"3H 4H 5H 6H 7H"};
+        PokerHand straightFlush {"9H TH JH QH KH"};
         assert(straightFlush.getHandRank() == pokerDefs::HandRank::StraightFlush);
         std::cout << "Straigh Flush Card Rank Test Succeeded.\n";
 

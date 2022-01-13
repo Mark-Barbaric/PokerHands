@@ -25,7 +25,9 @@ namespace grabyo {
 		[[nodiscard]] int getHandScore() const {return m_handScore;}
 
 	private:
-	    void setHandRank();
+	    void analyzeCards();
+		void setHandRank();
+		void analyzeCardCount();
 		std::string m_hand;
         pokerDefs::HandRank m_handRank {pokerDefs::HandRank::Unclassified};
 		pokerDefs::Card m_cards[5];
@@ -33,6 +35,11 @@ namespace grabyo {
 		bool m_containsStraight {false};
 		bool m_containsFlush {false};
 		int m_highestCardValue{0};
+		std::map<char,int> m_cardCount;
+		std::map<char,int> m_suitCount;
+		int m_numPairs {0};
+		int m_numTrips {0};
+		int m_numQuads {0};
 	};
 }
 
