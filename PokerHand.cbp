@@ -94,19 +94,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/markbarbaric/Documents/Developer/C++/GrabYoTest/Lib/PokerDefs.h">
+			<Option target="PokerLib"/>
+		</Unit>
 		<Unit filename="/Users/markbarbaric/Documents/Developer/C++/GrabYoTest/Lib/PokerHand.cpp">
 			<Option target="PokerLib"/>
 		</Unit>
 		<Unit filename="/Users/markbarbaric/Documents/Developer/C++/GrabYoTest/Lib/PokerHand.h">
-			<Option target="PokerLib"/>
-		</Unit>
-		<Unit filename="/Users/markbarbaric/Documents/Developer/C++/GrabYoTest/Lib/PokerHandData.h">
-			<Option target="PokerLib"/>
-		</Unit>
-		<Unit filename="/Users/markbarbaric/Documents/Developer/C++/GrabYoTest/Lib/PokerHandRanker.cpp">
-			<Option target="PokerLib"/>
-		</Unit>
-		<Unit filename="/Users/markbarbaric/Documents/Developer/C++/GrabYoTest/Lib/PokerHandRanker.h">
 			<Option target="PokerLib"/>
 		</Unit>
 		<Unit filename="/Users/markbarbaric/Documents/Developer/C++/GrabYoTest/Lib/StringHelpers.h">
@@ -115,7 +109,13 @@
 		<Unit filename="/Users/markbarbaric/Documents/Developer/C++/GrabYoTest/PokerHandTestRunner.cpp">
 			<Option target="PokerTestRunner"/>
 		</Unit>
-		<Unit filename="/Users/markbarbaric/Documents/Developer/C++/GrabYoTest/Tests/PokerRankerTests.cpp">
+		<Unit filename="/Users/markbarbaric/Documents/Developer/C++/GrabYoTest/Tests/PokerHandComparisonTests.cpp">
+			<Option target="PokerTestRunner"/>
+		</Unit>
+		<Unit filename="/Users/markbarbaric/Documents/Developer/C++/GrabYoTest/Tests/PokerHandRankTests.cpp">
+			<Option target="PokerTestRunner"/>
+		</Unit>
+		<Unit filename="/Users/markbarbaric/Documents/Developer/C++/GrabYoTest/Tests/PokerHandScoreTests.cpp">
 			<Option target="PokerTestRunner"/>
 		</Unit>
 		<Unit filename="/Users/markbarbaric/Documents/Developer/C++/GrabYoTest/Tests/StringHelperTests.cpp">

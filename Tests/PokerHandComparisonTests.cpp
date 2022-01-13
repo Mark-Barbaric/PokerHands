@@ -1,12 +1,11 @@
 #include <cassert>
 #include "../Lib/PokerHand.h"
-#include "../Lib/PokerHandRanker.h"
 
-namespace pokerHandTests{
+namespace grabyo::pokerHandTests{
 
     void testCaseOne() {
-        grabyo::PokerHand hand{"TD 9S QS QH TH"};
-        grabyo::PokerHand opponent{"5D 5S QC 9H QH"};
+        grabyo::PokerHand hand{"TD AS QS KH TH"};
+        grabyo::PokerHand opponent{"TD AS QS KH TH"};
         assert(hand.compareWith(opponent) == grabyo::PokerHand::Comparison::Win);
     }
 

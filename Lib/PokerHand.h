@@ -3,6 +3,9 @@
 
 #include <string>
 #include <string_view>
+#include <cmath>
+#include "StringHelpers.h"
+#include "PokerDefs.h"
 
 namespace grabyo {
 
@@ -18,11 +21,18 @@ namespace grabyo {
 		explicit PokerHand(std::string_view hand);
 		Comparison compareWith(const PokerHand& opponent);
 		[[nodiscard]] std::string getCards() const {return m_hand;}
+        [[nodiscard]] pokerDefs::HandRank getHandRank() const {return m_handRank;}
+		[[nodiscard]] int getHandScore() const {return m_handScore;}
 
 	private:
-
+	    void setHandRank();
 		std::string m_hand;
-		int m_pokerHandRank {-1};
+        pokerDefs::HandRank m_handRank {pokerDefs::HandRank::Unclassified};
+		pokerDefs::Card m_cards[5];
+		int m_handScore {0};
+		bool m_containsStraight {false};
+		bool m_containsFlush {false};
+		int m_highestCardValue{0};
 	};
 }
 
