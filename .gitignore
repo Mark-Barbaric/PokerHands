@@ -2,3 +2,7 @@
 /CMakeFiles
 /.idea
 CMakeCache.txt
+PokerTestRunner
+libPokerLib.a
+libTests.a
+PokerHand.cbp

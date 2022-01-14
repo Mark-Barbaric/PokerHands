@@ -4,6 +4,7 @@
 #include <string>
 #include <string_view>
 #include <cmath>
+#include <map>
 #include "StringHelpers.h"
 #include "PokerDefs.h"
 
@@ -20,7 +21,6 @@ namespace grabyo {
 
 		explicit PokerHand(std::string_view hand);
 		Comparison compareWith(const PokerHand& opponent);
-		[[nodiscard]] std::string getCards() const {return m_hand;}
         [[nodiscard]] pokerDefs::HandRank getHandRank() const {return m_handRank;}
 		[[nodiscard]] int getHandScore() const {return m_handScore;}
 

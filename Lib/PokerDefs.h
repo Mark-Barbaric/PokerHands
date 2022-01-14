@@ -1,11 +1,5 @@
-//
-// Created by Mark Barbaric on 12/01/2022.
-//
-
-#ifndef POKERHANDDATA_H
-#define POKERHANDDATA_H
-
-#include <map>
+#ifndef POKERDEFS_H
+#define POKERDEFS_H
 
 namespace grabyo::pokerDefs{
 

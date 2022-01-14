@@ -6,8 +6,10 @@ namespace grabyo::pokerHandScoreTests{
 
     inline void pokerHandScoreTests() {
         std::cout << "Running Poker Hand Score Tests. \n\n";
-        grabyo::PokerHand pair{"TD TS AC KH QS"};
-        assert(pair.getHandScore() == 2039);
+        grabyo::PokerHand highCard{"9D JS AC KH QS"};
+        assert(highCard.getHandScore() == 59);
+        grabyo::PokerHand pair{"2D 2S 3C 4H 5S"};
+        assert(pair.getHandScore() == 412);
         grabyo::PokerHand pair2{"TD TC AC KH JS"};
         assert(pair2.getHandScore() == 2038);
         std::cout << "Pair Score Tests Pass. \n";
