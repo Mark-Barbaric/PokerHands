@@ -81,7 +81,7 @@ void grabyo::PokerHand::analyzeCardCount()
             } else if(c.second == 4){
                 m_numQuads++;
             }
-            m_handScore += (pokerDefs::faceToValue(c.first) * c.second) * std::floor(std::pow(10, c.second));
+            m_handScore += (pokerDefs::faceToValue(c.first) * c.second) * static_cast<int>(std::pow(10, c.second));
         }else {
             m_handScore += pokerDefs::faceToValue(c.first);
         }

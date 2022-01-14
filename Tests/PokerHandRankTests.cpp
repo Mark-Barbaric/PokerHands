@@ -27,8 +27,8 @@ namespace grabyo::pokerHandRankTests{
         assert(fullHouse.getHandRank() == pokerDefs::HandRank::FullHouse);
         std::cout << "FullHouse Card Rank Test Succeeded.\n";
 
-        PokerHand ranker5 {"QH QS QD QC AH"};
-        assert(ranker5.getHandRank() == pokerDefs::HandRank::FourOfaKind);
+        PokerHand quads {"QH QS QD QC AH"};
+        assert(quads.getHandRank() == pokerDefs::HandRank::FourOfaKind);
         std::cout << "Quads Card Rank Test Succeeded.\n";
 
         PokerHand straight {"3H 4D 5D 6S 7D"};
