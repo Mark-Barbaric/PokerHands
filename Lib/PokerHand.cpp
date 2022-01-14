@@ -32,8 +32,8 @@ void grabyo::PokerHand::analyzeCards()
     while(std::getline(ss, pokerHand, ' ')){
 
         const auto curCard = pokerHand[0];
-        const auto curSuit = pokerHand[1];
-        m_cards[i] = pokerDefs::faceToValue(curCard);
+        const auto curSuit = static_cast<char>(std::tolower(pokerHand[1]));
+        m_cards[i] = faceToValue(curCard);
         max = std::max(m_cards[i], max);
         min = std::min(m_cards[i], min);
         m_suitCount[curSuit]++;
@@ -52,23 +52,23 @@ void grabyo::PokerHand::setHandRank()
     if(m_containsFlush || m_containsStraight){
         m_handScore = m_highestCardValue * 100000;
         if(m_containsStraight && m_containsFlush){
-            m_handRank = m_highestCardValue == 14 ? pokerDefs::HandRank::RoyalFlush : pokerDefs::HandRank::StraightFlush;
+            m_handRank = m_highestCardValue == 14 ? HandRank::RoyalFlush : HandRank::StraightFlush;
         } else if(m_containsStraight && !m_containsFlush){
-            m_handRank = pokerDefs::HandRank::Straight;
+            m_handRank = HandRank::Straight;
         } else if(!m_containsStraight && m_containsFlush){
-            m_handRank = pokerDefs::HandRank::Flush;
+            m_handRank = HandRank::Flush;
         }
     } else {
         analyzeCardCount();
         if(m_numQuads == 0 && m_numTrips == 0 && m_numPairs == 0){
-            m_handRank = pokerDefs::HandRank::HighCard;
+            m_handRank = HandRank::HighCard;
         } else {
             if(m_numQuads){
-                m_handRank = pokerDefs::HandRank::FourOfaKind;
+                m_handRank = HandRank::FourOfaKind;
             } else if(m_numTrips){
-                m_handRank = m_numPairs ? pokerDefs::HandRank::FullHouse : pokerDefs::HandRank::ThreeOfAKind;
+                m_handRank = m_numPairs ? HandRank::FullHouse : HandRank::ThreeOfAKind;
             } else if(m_numPairs && !m_numTrips){
-                m_handRank = m_numPairs == 2 ? pokerDefs::HandRank::TwoPair : pokerDefs::HandRank::OnePair;
+                m_handRank = m_numPairs == 2 ? HandRank::TwoPair : HandRank::OnePair;
             }
         }
     }
@@ -85,9 +85,9 @@ void grabyo::PokerHand::analyzeCardCount()
             } else if(c.second == 4){
                 m_numQuads++;
             }
-            m_handScore += (pokerDefs::faceToValue(c.first) * c.second) * static_cast<int>(std::pow(10, c.second));
+            m_handScore += (faceToValue(c.first) * c.second) * static_cast<int>(std::pow(10, c.second));
         }else {
-            m_handScore += pokerDefs::faceToValue(c.first);
+            m_handScore += faceToValue(c.first);
         }
     }
 }

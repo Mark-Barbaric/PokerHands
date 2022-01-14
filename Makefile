@@ -262,30 +262,6 @@ Tests/PokerHandScoreTests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PokerTestRunner.dir/build.make CMakeFiles/PokerTestRunner.dir/Tests/PokerHandScoreTests.cpp.s
 .PHONY : Tests/PokerHandScoreTests.cpp.s
 
-Tests/StringHelperTests.o: Tests/StringHelperTests.cpp.o
-.PHONY : Tests/StringHelperTests.o
-
-# target to build an object file
-Tests/StringHelperTests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PokerTestRunner.dir/build.make CMakeFiles/PokerTestRunner.dir/Tests/StringHelperTests.cpp.o
-.PHONY : Tests/StringHelperTests.cpp.o
-
-Tests/StringHelperTests.i: Tests/StringHelperTests.cpp.i
-.PHONY : Tests/StringHelperTests.i
-
-# target to preprocess a source file
-Tests/StringHelperTests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PokerTestRunner.dir/build.make CMakeFiles/PokerTestRunner.dir/Tests/StringHelperTests.cpp.i
-.PHONY : Tests/StringHelperTests.cpp.i
-
-Tests/StringHelperTests.s: Tests/StringHelperTests.cpp.s
-.PHONY : Tests/StringHelperTests.s
-
-# target to generate assembly for a file
-Tests/StringHelperTests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PokerTestRunner.dir/build.make CMakeFiles/PokerTestRunner.dir/Tests/StringHelperTests.cpp.s
-.PHONY : Tests/StringHelperTests.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -311,9 +287,6 @@ help:
 	@echo "... Tests/PokerHandScoreTests.o"
 	@echo "... Tests/PokerHandScoreTests.i"
 	@echo "... Tests/PokerHandScoreTests.s"
-	@echo "... Tests/StringHelperTests.o"
-	@echo "... Tests/StringHelperTests.i"
-	@echo "... Tests/StringHelperTests.s"
 .PHONY : help
 
 
