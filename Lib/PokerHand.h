@@ -5,6 +5,7 @@
 #include <string_view>
 #include <cmath>
 #include <map>
+#include <sstream>
 #include "StringHelpers.h"
 #include "PokerDefs.h"
 

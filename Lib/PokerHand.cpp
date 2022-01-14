@@ -24,17 +24,21 @@ grabyo::PokerHand::Comparison grabyo::PokerHand::compareWith(const PokerHand& op
 
 void grabyo::PokerHand::analyzeCards()
 {
-    const auto pokerHands = stringHelpers::splitString(m_hand, ' ');
-    auto max = INT_MIN, min = INT_MAX;
+    std::stringstream ss (m_hand);
+    std::string pokerHand;
 
-    for(int i = 0; i < pokerHands.size(); ++i){
-        const auto curCard = pokerHands[i][0];
-        const auto curSuit = pokerHands[i][1];
+    auto max = INT_MIN, min = INT_MAX, i = 0;
+
+    while(std::getline(ss, pokerHand, ' ')){
+
+        const auto curCard = pokerHand[0];
+        const auto curSuit = pokerHand[1];
         m_cards[i] = pokerDefs::faceToValue(curCard);
         max = std::max(m_cards[i], max);
         min = std::min(m_cards[i], min);
         m_suitCount[curSuit]++;
         m_cardCount[curCard]++;
+        i++;
     }
 
     m_containsFlush = m_suitCount.size() == 1;

@@ -6,9 +6,9 @@ namespace grabyo::pokerHandComparisonTests{
 
     inline void comparisonTests() {
         std::cout << "Running Poker Hand Comparison Tests.\n\n";
-        grabyo::PokerHand highCard1{"3D AS QS KC 2D"};
-        grabyo::PokerHand highCard2{"3S JC QD KH 2H"};
-        grabyo::PokerHand highCard3{"3C AD QH KH 2H"};
+        grabyo::PokerHand highCard1{"3D AS QS KC 2H"};
+        grabyo::PokerHand highCard2{"3D JC QD KC 2H"};
+        grabyo::PokerHand highCard3{"3D AD QS KC 2H"};
         assert(highCard1.compareWith(highCard2) == grabyo::PokerHand::Comparison::Win);
         std::cout << "High Card1 vs High Card2 Test Passed.\n";
         assert(highCard3.compareWith(highCard3) == grabyo::PokerHand::Comparison::Tie);
@@ -16,7 +16,7 @@ namespace grabyo::pokerHandComparisonTests{
 
         grabyo::PokerHand pair1{"2D 5S 2S 3H 4C"};
         grabyo::PokerHand pair2{"2D 2C QD KH AS"};
-        grabyo::PokerHand pair3{"2H 2D QS KC AD"};
+        grabyo::PokerHand pair3{"2D 2S QS KC AD"};
         assert(pair1.compareWith(highCard3) == grabyo::PokerHand::Comparison::Win);
         std::cout << "Pair1 vs High Card3 Test Passed.\n";
         assert(pair1.compareWith(pair2) == grabyo::PokerHand::Comparison::Loss);
