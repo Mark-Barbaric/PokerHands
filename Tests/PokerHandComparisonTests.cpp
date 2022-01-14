@@ -53,10 +53,10 @@ namespace grabyo::pokerHandComparisonTests{
         assert(straight1.compareWith(straight3) == PokerHand::Comparison::Tie);
         std::cout << "Straight1 vs Straight3 Test Passed.\n";
 
-        PokerHand flush1 {"7H 2H JH 5H 3H"};
-        PokerHand fullHouse1{"KD KH KC 3S 3D"};
-        PokerHand quads1{"KD KH KC KS 3D"};
-        PokerHand quads2{"QD QH QC QS 4D"};
+        PokerHand flush1 {"KH 2H QH 5H 3H"};
+        PokerHand fullHouse1{"KD KH KC 3H 3D"};
+        PokerHand quads1{"KD KH KC KS 3H"};
+        PokerHand quads2{"QD QH QC QS 5H"};
         assert(flush1.compareWith(straight1) == PokerHand::Comparison::Win);
         std::cout << "Flush1 vs Straight1 Test Passed.\n";
         assert(fullHouse1.compareWith(flush1) == PokerHand::Comparison::Win);
@@ -95,6 +95,18 @@ namespace grabyo::pokerHandComparisonTests{
         std::cout << "Royal Flush1 vs Two Pair2 Test Passed.\n";
         assert(fullHouse1.compareWith(royalFlush2) == PokerHand::Comparison::Loss);
         std::cout << "Full House1 vs Royal Flush2 Test Passed.\n";
+
+        //Casino Royal test
+        PokerHand bond {"5S 7S 6S 8S 4S"};
+        PokerHand jg {"KS QS 8S 7S 5S"};
+        PokerHand lc {"AH AS AD 8S 8C"};
+        PokerHand og {"8C 8D 8S AS AD"};
+        assert(bond.compareWith(jg) == PokerHand::Comparison::Win);
+        assert(lc.compareWith(jg) == PokerHand::Comparison::Win);
+        assert(lc.compareWith(og) == PokerHand::Comparison::Win);
+        assert(jg.compareWith(og) == PokerHand::Comparison::Loss);
+        assert(lc.compareWith(bond) == PokerHand::Comparison::Loss);
+        std::cout << "Casino Royal Tests Passed.\n";
         std::cout << "Poker Hand Comparison Tests Succeeded.\n\n";
     }
 
